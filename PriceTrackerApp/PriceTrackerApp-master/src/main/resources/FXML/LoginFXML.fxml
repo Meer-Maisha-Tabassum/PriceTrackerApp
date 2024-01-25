@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLControllerClasses.LoginController">
+   <children>
+      <Pane layoutX="264.0" prefHeight="400.0" prefWidth="341.0" style="-fx-background-color: orange;">
+         <children>
+            <TextField fx:id="userNameTextfield" layoutX="96.0" layoutY="95.0" />
+            <Label layoutX="29.0" layoutY="99.0" style="-fx-background-color: yellow;" text="Username" />
+            <TextField fx:id="userPasswordTextfield" layoutX="96.0" layoutY="153.0" />
+            <Label layoutX="31.0" layoutY="157.0" prefHeight="17.0" prefWidth="53.0" style="-fx-background-color: yellow;" text="Password" />
+            <Button fx:id="loginButton" layoutX="138.0" layoutY="209.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: yellow;" text="Login" />
+            <Label layoutX="107.0" layoutY="257.0" text="Don't a account?">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="registerButton" layoutX="138.0" layoutY="293.0" mnemonicParsing="false" onAction="#onRegistration" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: yellow;" text="Register" />
+         </children>
+      </Pane>
+      <Pane layoutY="-1.0" prefHeight="400.0" prefWidth="270.0" style="-fx-background-color: yellow;">
+         <children>
+            <ImageView fitHeight="301.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/img.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="79.0" layoutY="296.0" text="WELCOME">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>

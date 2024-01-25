@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1544.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLControllerClasses.MainPageController">
+    <children>
+      <Pane layoutX="730.0" prefHeight="780.0" prefWidth="815.0" style="-fx-background-color: orange;">
+         <children>
+            <Button layoutX="60.0" layoutY="558.0" mnemonicParsing="false" onAction="#onCheapestSeller" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: yellow;" text="Show Cheapest Seller" />
+            <Button layoutX="227.0" layoutY="558.0" mnemonicParsing="false" onAction="#onCheapestSellerShop" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: yellow;" text="Show Cheapest Shop" />
+         </children>
+      </Pane>
+      <Pane layoutY="-3.0" prefHeight="780.0" prefWidth="730.0" style="-fx-background-color: Yellow;" />
+        <Button fx:id="searchButton" layoutX="251.0" layoutY="71.0" mnemonicParsing="false" onAction="#onSearch" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: orange;" text="Search" />
+        <LineChart fx:id="trend" layoutX="33.0" layoutY="486.0" prefHeight="273.0" prefWidth="394.0" visible="false">
+            <xAxis>
+                <CategoryAxis animated="false" label="Date" fx:id="xAxis" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Average Price" side="LEFT" />
+            </yAxis>
+        </LineChart>
+      <Label layoutX="142.0" layoutY="23.0" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: orange;" text="Show Top 5 Sellers">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="showPriceTrendButton" layoutX="161.0" layoutY="446.0" mnemonicParsing="false" onAction="#onPriceTrend" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: orange;" text="Show Price Trend" />
+      <TextArea fx:id="topSellersTextArea" editable="false" layoutX="38.0" layoutY="180.0" prefHeight="246.0" prefWidth="361.0" />
+      <TextField fx:id="searchProductText" layoutX="74.0" layoutY="72.0" />
+      <TreeView fx:id="categoryTreeView" layoutX="482.0" layoutY="72.0" prefHeight="246.0" prefWidth="215.0" />
+      <ChoiceBox fx:id="itemChoiceBox" layoutX="514.0" layoutY="368.0" prefWidth="150.0" style="-fx-background-color: white;" />
+      <ChoiceBox fx:id="unitChoiceBox" layoutX="74.0" layoutY="140.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white;" />
+      <Button layoutX="251.0" layoutY="139.0" mnemonicParsing="false" onAction="#onUnitSearch" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: orange;" text="Show Results" />
+      <Label layoutX="94.0" layoutY="113.0" prefHeight="26.0" prefWidth="95.0" text="Choose Unit">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="515.0" layoutY="332.0" prefHeight="36.0" prefWidth="149.0" text="Click Below to Show">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="542.0" layoutY="413.0" mnemonicParsing="false" onAction="#onBrowse" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: orange;" text="Search Items" />
+      <Button fx:id="logoutButton" layoutX="1387.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogout" prefHeight="36.0" prefWidth="79.0" style="-fx-background-color: red;" text="Logout" />
+      <Label layoutX="1099.0" layoutY="79.0" prefHeight="36.0" prefWidth="45.0" text="Cart">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="cartTableView" layoutX="1082.0" layoutY="123.0" prefHeight="200.0" prefWidth="394.0">
+        <columns>
+          <TableColumn fx:id="itemNameColumn" prefWidth="112.0" text="Item Name" />
+          <TableColumn fx:id="itemCodeColumn" prefWidth="87.2000732421875" text="Item Code" />
+            <TableColumn fx:id="unitColumn" minWidth="0.0" prefWidth="80.7999267578125" text="Unit" />
+            <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="108.0" text="Quantity" />
+        </columns>
+      </TableView>
+      <Button layoutX="754.0" layoutY="278.0" mnemonicParsing="false" onAction="#onAddToCart" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: yellow;" text="Add" />
+      <Label layoutX="755.0" layoutY="132.0" text="Item Name" />
+      <TextField fx:id="itemNameTextfield" layoutX="831.0" layoutY="128.0" />
+      <TextField fx:id="itemCodeTextfield" layoutX="831.0" layoutY="162.0" />
+      <Button layoutX="971.0" layoutY="278.0" mnemonicParsing="false" onAction="#onDeleteFromCart" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: yellow;" text="Delete" />
+      <Button layoutX="866.0" layoutY="278.0" mnemonicParsing="false" onAction="#onUpdateFromCart" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: yellow;" text="Update" />
+      <TextField fx:id="quantityTextfield" layoutX="831.0" layoutY="223.0" />
+      <TextField fx:id="unitTextfield" layoutX="831.0" layoutY="191.0" />
+      <Label layoutX="757.0" layoutY="166.0" text="Item Code" />
+      <Label layoutX="755.0" layoutY="195.0" text="Unit" />
+      <Label layoutX="754.0" layoutY="227.0" text="Quantity" />
+      <TextArea fx:id="cheapestSellerTextArea" editable="false" layoutX="755.0" layoutY="349.0" prefHeight="180.0" prefWidth="370.0" />
+    </children>
+</Pane>
